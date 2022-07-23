@@ -1,0 +1,226 @@
+:root{
+    --backgroundColor:rgba(220,200,100,1)
+}
+body{
+    background-color: rgb(194, 139, 117);
+    margin: 0;
+}
+.none{
+    display: none;
+}
+.note{
+    position: fixed;
+    left: 40%;
+    top: 10%;
+    height: 30px;
+    background-color: var(--backgroundColor);
+}
+.note::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+.noteTitle{
+    display: inline-block;
+    height: 30px;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 20px;
+    transform: translate(0,-5px);
+}
+.noteAdd{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(200,200,200,0.5);
+}
+.noteAdd::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: calc( 50% - 3px);
+    width: calc(100% - 6px);
+    height: 6px;
+    background-color: rgba(0,0,0,1);
+}
+.noteAdd::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc( 50% - 3px);
+    top: 3px;
+    width: 6px;
+    height: calc(100% - 6px);
+    background-color: rgba(0,0,0,1);
+}
+.noteAdd:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+.noteAdd:hover::before,.noteAdd:hover::after{
+    background-color: rgba(200,200,200,1);
+}
+.noteBox{
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    z-index: 0;
+}
+.noteControlBoard{
+    width: 160px;
+    background-color: var(--backgroundColor);
+}
+.noteControlBoard::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+.noteBoxTitle{
+    display: inline-block;
+    height: 28px;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 0;
+    margin-left: 20px;
+    margin-top: 4px;
+    resize: none;
+}
+.noteTriangle{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 20px solid rgba(0,0,0,0.5);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-bottom: 3px;
+}
+.noteTriangle:hover{
+    border-top: 20px solid rgba(220,220,220,0.5);
+}
+.on{
+    transform: rotate(0deg);
+}
+.off{
+    transform: rotate(180deg);
+}
+.noteBoard{
+    position: absolute;
+    top: 100%;
+    width: 300px;
+    height: 270px;
+    background-color: var(--backgroundColor);
+    margin-top: 2px;
+    z-index: -1;
+}
+.noteBoardText{
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-color: transparent;
+    font-size: large;
+    resize: none;
+    border: 0;
+    margin: 10px;
+    z-index: 2;
+}
+.noteBoardDraw{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.noteToolBoard{
+    position:absolute;
+    top:100%;
+    width: 100%;
+    height: 30px;
+    background-color: var(--backgroundColor);
+    border-top: 2px solid darkgray;
+}
+.noteTool{
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+.toolImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.noteToolBoard .chosen{
+    background-color: rgba(0,0,0,0.1);
+}
+.noteColor{
+    float: right;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0,0,0,0.5);
+    margin: 3px;
+}
+.noteColorChoose{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 150px;
+    background-color: aliceblue;
+    border-top: 2px solid darkgray;
+}
+.colorLine{
+    position: relative;
+    display: inline-block;
+    height: 10px;
+    width: 235px;
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.colorLine::before{
+    content: "R";
+    display: block;
+    position: absolute;
+    transform: translate(-17px,-5px);
+}
+.colorLine:nth-child(8n+3)::before{
+    content: "G";
+}
+.colorLine:nth-child(8n+5)::before{
+    content: "B";
+}
+.colorLine:nth-child(8n+7)::before{
+    content: "A";
+}
+.colorBlock{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 16px;
+    transform: translate(-50%,-25%);
+    border: 2px solid gray;
+    background-color: white;
+}
+.colorLabel{
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    border: 2px solid lightgray;
+}
+.hidden{
+    display: none;
+}
+.noteBoard:hover .hidden{
+    display: block;
+}
